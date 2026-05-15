@@ -8,3 +8,8 @@ Route::get('/test-api', function () {
         'stato' => 'Gasatissimo'
     ]);
 });
+use App\Http\Controllers\Api\PostController;
+
+Route::get('/posts', [PostController::class, 'index']);
+Route::post('/posts', [PostController::class, 'store']);
+Route::delete('/posts/{id}', [PostController::class, 'destroy']);
